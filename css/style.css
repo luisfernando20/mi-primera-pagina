@@ -1,0 +1,182 @@
+*{
+    margin: 0;
+}
+
+body{
+
+    background-image: url("../img/fondo 1.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+p{
+    text-align: justify;
+}
+
+.contenedor{
+    width: 90%; /*ancho del cuerpo*/
+    max-width: 1000px;
+    margin: 20px auto; /* centramos el cuerpo de la web */
+    display:grid;
+    grid-gap: 5px;
+
+    /* se define la estructura de 3 columnascon 4 filas*/
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(4,auto);
+
+    /* se define el orden de la estructura */
+    grid-template-areas: "cabecera cabecera cabecera"
+                         "contenido contenido lateral"
+                         "publicidad-1 publicidad-2 publicidad-3"
+                         "footer footer footer";
+}
+
+
+.cabecera{
+    background: #da160c;
+    color: #ffffff;
+    height: 200px;
+    grid-area: cabecera;
+    padding-top: 10px;
+}
+
+.texto_interno{
+    background: #ffffff;
+    padding: 20px;
+}
+
+.contenido{
+    grid-area:contenido;
+    background: #ffffff;
+}
+
+.lateral{
+    background: #0dcfec;
+    grid-area:lateral;
+}
+
+.widget-1,.widget-2,.widget-3{
+
+    background: #ffffff;
+    height: 167px;
+    border-radius: 10px;
+}
+
+.widget-1{
+    grid-area:publicidad-1;
+}
+
+.wigdet-2{
+    grid-area:publicidad-2;
+}
+
+.widget-3{
+    grid-area:publicidad-3;
+}
+
+.footer{
+    background: #5EE00F ;
+    grid-area:footer;
+}
+
+/*** estilos de menu**/
+.logo{
+    margin-left: 30px;
+
+}
+
+.menu_bar{
+    float:right;
+    display:none;
+}
+
+header nav ul{
+    float:right;
+    list-style:none;
+    margin-right: 20px;
+}
+
+header nav ul li{
+    display: inline; /* para ponerlos en una linea */
+    margin:0 7px;
+    line-height: 50px;
+}
+
+header nav ul li a{
+    text-decoration: none;
+    font-size: 17px;
+    color: #8EFE07;
+    padding: 7px 12px; /*para tener un espacio al rededor del menu */
+}
+
+a.active, a:hover{
+    background: #CD00FA;
+    color: #ffffff;
+}
+
+form input{
+    width: 80%;
+    height: 20px;
+}
+form .boton{
+    background: #8EFE07;
+    color: #ffffff;
+    height: 35px;
+}
+
+
+@media screen and (max-width: 760px)
+{
+    /*este es para el compartamiento cuando tenemos dispositivos moviles */
+
+    .contenedor{
+        grid-template-areas: "cabecera cabecera cabecera"
+                             "contenido contenido contenido"
+                             "lateral lateral lateral"
+                             "publicidad-1 publicidad-1 publicidad-1"
+                             "publicidad-2 publicidad-2 publicidad-2"
+                             "publicidad-3 publicidad-3 publicidad-3"
+                             "footer footer footer";
+    }
+}
+
+
+@media screen and (max-width:760px)
+{
+    .menu_bar{
+        display: block;
+    }
+
+    header nav ul{
+        width: 80%;
+        height: 100%;
+        background: #F30534;
+        position: absolute;
+        margin:0;
+        padding: 5px;
+        margin-top: 20px;
+        left: -100%;
+
+    }
+
+    header nav ul li{
+        display: block;
+        border-bottom: 1px solid #05F3F3
+    }
+
+    a:active,a:hover{
+        background: none;
+        color: #000000;
+    }
+
+
+    header label a{
+        text-decoration: none;
+        font-size: 20px;
+        font-weight: bold;
+        padding-right: 10px;
+        color: #000000;
+    }
+}
